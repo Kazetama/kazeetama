@@ -2,11 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import Navbar from "@/components/organisms/navbar";
+import About from "@/components/organisms/hero";
 import { Zap } from "lucide-react"; 
 
 const Preloader = () => {
   return (
-    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white">
+    <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-white">
       <div className="relative mb-6">
         <div className="absolute inset-0 bg-blue-100 rounded-full blur-xl opacity-50 animate-pulse"></div>
         <div className="relative bg-slate-50 p-4 rounded-full border border-slate-100 shadow-lg animate-bounce">
@@ -60,6 +61,7 @@ function App() {
         }`}
       >
         <Navbar />
+        <About />
       </main>
     </>
   );

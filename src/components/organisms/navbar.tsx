@@ -56,7 +56,7 @@ const Navbar = () => {
                                 </Button>
                             </SheetTrigger>
 
-                            <SheetContent side="right" className="w-[85%] sm:w-[380px] px-6 border-l-0 rounded-l-[2rem]">
+                            <SheetContent side="right" className="w-[85%] sm:w-95 px-6 border-l-0 rounded-l-[2rem]">
                                 <SheetHeader className="text-left pt-6 pb-8 border-b border-slate-50">
                                     <SheetTitle className="text-2xl font-black tracking-tight">
                                         MENU<span className="text-blue-600">.</span>
