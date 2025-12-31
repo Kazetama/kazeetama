@@ -42,7 +42,7 @@ const Navbar = () => {
                     </div>
 
                     <div className="hidden md:block">
-                        <Button className="rounded-xl px-6 bg-slate-900 hover:bg-blue-600 transition-all shadow-lg shadow-slate-200">
+                        <Button className="rounded-xl px-6 bg-slate-900 hover:bg-slate-800 cursor-pointer transition-all shadow-lg shadow-slate-200">
                             Contact Us
                         </Button>
                     </div>
