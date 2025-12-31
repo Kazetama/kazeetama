@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github } from "lucide-react";
 import profileImg from "@/assets/profile.png";
+import Tilt from 'react-parallax-tilt';
+import Link from "next/link";
 
 const Hero = () => {
     return (
@@ -36,7 +38,7 @@ const Hero = () => {
                         <div className="space-y-4">
                             <h2 className="text-3xl md:text-5xl lg:text-6xl/tight font-extrabold tracking-tight text-slate-900">
                                 Teuku Aryansyah <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                                <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600">
                                     Pratama
                                 </span>
                             </h2>
@@ -52,41 +54,65 @@ const Hero = () => {
                                 sesuai standar industri.
                             </p>
                         </div>
-
-                        {/* Buttons */}
                         <nav className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start w-full sm:w-auto">
                             <Button size="lg" className="h-11 md:h-12 w-full sm:w-auto px-8 text-base bg-slate-900">
                                 Mulai Sekarang <ArrowRight className="ml-2 h-4 w-4" />
                             </Button>
 
-                            <Button size="lg" variant="outline" className="h-11 md:h-12 w-full sm:w-auto px-8 text-base">
-                                <Github className="mr-2 h-4 w-4" />
-                                GitHub Profile
-                            </Button>
+                            <Link href="https://github.com/Kazetama" passHref>
+                                <Button
+                                    size="lg"
+                                    variant="outline"
+                                    className="h-11 md:h-12 w-full sm:w-auto px-8 text-base"
+                                >
+                                    <Github className="mr-2 h-4 w-4" />
+                                    GitHub Profile
+                                </Button>
+                            </Link>
                         </nav>
                     </header>
-                    <figure className="relative flex justify-center lg:justify-end order-1 lg:order-2 mt-4 lg:mt-0">
-                        <div className="relative bg-white p-2 md:p-3 rounded-[2rem] shadow-2xl w-full max-w-[260px] md:max-w-[360px] rotate-0 lg:rotate-2 hover:rotate-0 transition-transform duration-300">
-                            <Image
-                                src={profileImg}
-                                alt="Profile Kazeetama"
-                                priority 
-                                className="rounded-[1.5rem] w-full object-cover aspect-[3/4]"
-                            />
-                            <div className="absolute -left-2 bottom-6 md:-left-6 md:bottom-8 bg-white/95 backdrop-blur-md p-3 rounded-xl shadow-lg border border-white/50 flex items-center gap-3 animate-bounce-slow max-w-[180px] md:max-w-none">
-                                <div className="bg-green-100 p-2 rounded-full shrink-0">
-                                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+
+                    <figure className="relative flex justify-center lg:justify-end order-1 lg:order-2 mt-4 lg:mt-0 z-10">
+                        <Tilt
+                            perspective={1000}
+                            glareEnable={true}
+                            glareMaxOpacity={0.45}
+                            scale={1.02}
+                            tiltMaxAngleX={10}
+                            tiltMaxAngleY={10}
+                            transitionSpeed={1500}
+                            className="w-full max-w-65 md:max-w-90"
+                        >
+                            <div
+                                className="relative bg-white p-2 md:p-3 rounded-[2rem] shadow-2xl w-full transition-all duration-300"
+                                style={{ transformStyle: 'preserve-3d' }}
+                            >
+                                <div style={{ transform: 'translateZ(20px)' }}>
+                                    <Image
+                                        src={profileImg}
+                                        alt="Profile Kazeetama"
+                                        priority
+                                        className="rounded-[1.5rem] w-full object-cover aspect-3/4 shadow-sm"
+                                    />
                                 </div>
-                                <div>
-                                    <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">
-                                        Current Focus
-                                    </p>
-                                    <p className="text-xs md:text-sm font-bold text-slate-900">
-                                        Fullstack Dev
-                                    </p>
+                                <div
+                                    className="absolute -left-2 bottom-6 md:-left-6 md:bottom-8 bg-linear-to-br from-white via-white to-slate-100/90 backdrop-blur-md p-3 rounded-xl border-t border-l border-r border-white/60 border-b-4 border-b-slate-200/80 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] flex items-center gap-3 animate-bounce-slow max-w-45 md:max-w-none"
+                                    style={{ transform: 'translateZ(110px)' }}
+                                >
+                                    <div className="bg-green-100 p-2 rounded-full shrink-0 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)]">
+                                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse ring-2 ring-green-300/50"></div>
+                                    </div>
+                                    <div>
+                                        <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider drop-shadow-sm">
+                                            Current Focus
+                                        </p>
+                                        <p className="text-xs md:text-sm font-black text-slate-900 drop-shadow-sm">
+                                            Fullstack Dev
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </Tilt>
                     </figure>
                 </div>
             </div>
