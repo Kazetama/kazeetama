@@ -3,14 +3,14 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github } from "lucide-react";
 import profileImg from "@/assets/profile.png";
-import Tilt from 'react-parallax-tilt';
+import Tilt from "react-parallax-tilt";
 import Link from "next/link";
 
 const Hero = () => {
     return (
         <section
             className="w-full min-h-screen lg:h-screen bg-slate-50/50 relative flex items-center justify-center pt-28 pb-12 lg:py-0 overflow-x-hidden"
-            aria-label="Hero Section - Kazeetama Portfolio"
+            aria-label="Hero Section - Teuku Aryansyah Pratama Portfolio"
         >
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl -z-10 pointer-events-none overflow-hidden">
                 <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200/40 rounded-full blur-[100px]" />
@@ -29,19 +29,19 @@ const Hero = () => {
                                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
                                 </span>
                                 <span className="text-xs md:text-sm font-medium text-slate-600">
-                                    Web Developer • Software Engineer
+                                    Informatics Student • Web Developer
                                 </span>
                             </div>
                         </div>
 
                         {/* Heading & Bio */}
                         <div className="space-y-4">
-                            <h2 className="text-3xl md:text-5xl lg:text-6xl/tight font-extrabold tracking-tight text-slate-900">
+                            <h1 className="text-3xl md:text-5xl lg:text-6xl/tight font-extrabold tracking-tight text-slate-900">
                                 Teuku Aryansyah <br />
                                 <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600">
                                     Pratama
                                 </span>
-                            </h2>
+                            </h1>
 
                             <p className="text-sm font-semibold text-slate-500 tracking-wide uppercase">
                                 Known as <strong>Kazeetama</strong>
@@ -49,14 +49,21 @@ const Hero = () => {
 
                             <p className="max-w-2xl mx-auto lg:mx-0 text-base text-slate-600 leading-relaxed">
                                 Saya adalah <strong>Teuku Aryansyah Pratama (Kazeetama)</strong>,
-                                seorang Software Developer dan Research-Oriented Engineer yang
-                                berfokus pada pengembangan sistem web modern, scalable, dan
-                                sesuai standar industri.
+                                mahasiswa <strong>Teknik Informatika</strong> yang memiliki minat
+                                pada pengembangan sistem web, backend engineering, dan
+                                perancangan aplikasi yang terstruktur, efisien, serta mudah
+                                dikembangkan.
                             </p>
                         </div>
+
+                        {/* CTA */}
                         <nav className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start w-full sm:w-auto">
-                            <Button size="lg" className="h-11 md:h-12 w-full sm:w-auto px-8 text-base bg-slate-900">
-                                Mulai Sekarang <ArrowRight className="ml-2 h-4 w-4" />
+                            <Button
+                                size="lg"
+                                className="h-11 md:h-12 w-full sm:w-auto px-8 text-base bg-slate-900"
+                            >
+                                Lihat Portfolio
+                                <ArrowRight className="ml-2 h-4 w-4" />
                             </Button>
 
                             <Link href="https://github.com/Kazetama" passHref>
@@ -66,7 +73,7 @@ const Hero = () => {
                                     className="h-11 md:h-12 w-full sm:w-auto px-8 text-base"
                                 >
                                     <Github className="mr-2 h-4 w-4" />
-                                    GitHub Profile
+                                    GitHub
                                 </Button>
                             </Link>
                         </nav>
@@ -85,29 +92,30 @@ const Hero = () => {
                         >
                             <div
                                 className="relative bg-white p-2 md:p-3 rounded-[2rem] shadow-2xl w-full transition-all duration-300"
-                                style={{ transformStyle: 'preserve-3d' }}
+                                style={{ transformStyle: "preserve-3d" }}
                             >
-                                <div style={{ transform: 'translateZ(20px)' }}>
+                                <div style={{ transform: "translateZ(20px)" }}>
                                     <Image
                                         src={profileImg}
-                                        alt="Profile Kazeetama"
+                                        alt="Teuku Aryansyah Pratama Profile"
                                         priority
                                         className="rounded-[1.5rem] w-full object-cover aspect-3/4 shadow-sm"
                                     />
                                 </div>
+
                                 <div
                                     className="absolute -left-2 bottom-6 md:-left-6 md:bottom-8 bg-linear-to-br from-white via-white to-slate-100/90 backdrop-blur-md p-3 rounded-xl border-t border-l border-r border-white/60 border-b-4 border-b-slate-200/80 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] flex items-center gap-3 animate-bounce-slow max-w-45 md:max-w-none"
-                                    style={{ transform: 'translateZ(110px)' }}
+                                    style={{ transform: "translateZ(110px)" }}
                                 >
-                                    <div className="bg-green-100 p-2 rounded-full shrink-0 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)]">
+                                    <div className="bg-green-100 p-2 rounded-full shrink-0">
                                         <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse ring-2 ring-green-300/50"></div>
                                     </div>
                                     <div>
-                                        <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider drop-shadow-sm">
+                                        <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">
                                             Current Focus
                                         </p>
-                                        <p className="text-xs md:text-sm font-black text-slate-900 drop-shadow-sm">
-                                            Fullstack Dev
+                                        <p className="text-xs md:text-sm font-black text-slate-900">
+                                            Backend & Web Systems
                                         </p>
                                     </div>
                                 </div>

@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import Navbar from "@/components/organisms/navbar";
 import Hero from "@/components/organisms/hero";
 import About from "@/components/organisms/about";
+import Study from "@/components/organisms/timeline";
+import Contact from "@/components/organisms/contact";
 import { Zap } from "lucide-react"; 
 
 const Preloader = () => {
@@ -64,6 +66,8 @@ function App() {
         <Navbar />
         <Hero />
         <About />
+        <Study />
+        <Contact />
       </main>
     </>
   );
